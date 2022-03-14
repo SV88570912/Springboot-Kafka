@@ -28,9 +28,17 @@ public class KafkaProducer {
 		return "message successfully sent";
 
 	}
-	public String showMessage(String messages) {
-		return messages;
-		
+
+	@GetMapping("/showmessages")
+	public String showMessage(String showmessages) {
+		try {
+			kafkaTemplate.send(ApplicationConstant.TOPIC_NAME, showmessages);
+
+		} catch (Exception e) {
+
+		}
+		return showmessages;
+
 	}
 
 }

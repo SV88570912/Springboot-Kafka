@@ -28,5 +28,9 @@ public class KafkaProducer {
 		return "message successfully sent";
 
 	}
+	public String showMessage(String messages) {
+		return messages;
+		
+	}
 
 }
